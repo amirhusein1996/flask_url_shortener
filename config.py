@@ -22,9 +22,21 @@ class Config:
 class DevelopmentConfig(Config):
     DEBUG = True
 
+    # mongo local config
+    MONGODB_SETTINGS = {
+        'db': 'your_db',
+        'host': 'mongodb://localhost:27017/your_db'
+    }
+
 
 class ProductionConfig(Config):
     DEBUG = False
+
+    # mongo production config
+    MONGODB_SETTINGS = {
+        'db': 'your_prod_db',
+        'host': 'mongodb://your_user:your_password@mongo.yourdomain.com:27017/your_prod_db'
+    }
 
 
 config = {
